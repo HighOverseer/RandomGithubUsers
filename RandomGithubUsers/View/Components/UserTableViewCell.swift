@@ -7,24 +7,31 @@
 
 import UIKit
 
-class UserTableViewCell: UITableViewCell, SkeletonViewsVisibilityDelegate{
+class UserTableViewCell: UITableViewCell, SkeletonViewsDelegate{
+    
     
     static let identifier = "userTableViewCell"
     static let nibName = "UserTableViewCell"
-
+    
+    
     @IBOutlet weak var githubUrlText: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var usernameText: UILabel!
     @IBOutlet weak var imageLoadingIndicator: UIActivityIndicatorView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        usernameText.text = ""
+        githubUrlText.text = ""
         userImageView.setupCircleImageView()
         
-        userImageView.isSkeletonable = true
-        usernameText.isSkeletonable = true
-        githubUrlText.isSkeletonable = true
+        setAllViewsSkeletonable(true)
         imageLoadingIndicator.isHidden = true
+        
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = .green80
+        selectedBackgroundView = backgroundView
     }
     
     var allViews: [UIView]{

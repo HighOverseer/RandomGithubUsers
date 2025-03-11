@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DetailControllerDelegate:AnyObject{
-    func didSendDataBack(_ data:String)
+    func didSendMessageBack(_ data:String)
 }

@@ -21,7 +21,7 @@ protocol SkeletonViewsDelegate{
 }
 
 extension SkeletonViewsDelegate{
-    func setAllViewSkeletonable(_ isSkeletonable:Bool){
+    func setAllViewsSkeletonable(_ isSkeletonable:Bool){
         allViews.forEach{ view in
             view.isSkeletonable = isSkeletonable
         }
