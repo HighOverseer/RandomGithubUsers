@@ -15,26 +15,26 @@ protocol SkeletonViewsDelegate{
     
     func hideSkeletons()
     
-    var allViews:[UIView]{
+    var allCandidateSkeletonViews:[UIView]{
         get
     }
 }
 
 extension SkeletonViewsDelegate{
     func setAllViewsSkeletonable(_ isSkeletonable:Bool){
-        allViews.forEach{ view in
+        allCandidateSkeletonViews.forEach{ view in
             view.isSkeletonable = isSkeletonable
         }
     }
     
     func showSkeletons(){
-        allViews.forEach{ view in
+        allCandidateSkeletonViews.forEach{ view in
             view.showAnimatedGradientSkeleton()
         }
     }
     
     func hideSkeletons(){
-        allViews.forEach{ view in
+        allCandidateSkeletonViews.forEach{ view in
             view.hideSkeleton()
             view.stopSkeletonAnimation()
             

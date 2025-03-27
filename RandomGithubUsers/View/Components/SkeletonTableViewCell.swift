@@ -25,7 +25,7 @@ class SkeletonTableViewCell: UITableViewCell, SkeletonViewsDelegate{
         setAllViewsSkeletonable(true)
     }
     
-    var allViews: [UIView]{
+    var allCandidateSkeletonViews: [UIView]{
         return [
             skeletonImageView,
             skeletonUsername,

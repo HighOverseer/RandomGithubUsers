@@ -34,7 +34,7 @@ class UserTableViewCell: UITableViewCell, SkeletonViewsDelegate{
         selectedBackgroundView = backgroundView
     }
     
-    var allViews: [UIView]{
+    var allCandidateSkeletonViews: [UIView]{
         return [
             githubUrlText,
             userImageView,

@@ -22,6 +22,7 @@ class DetailViewController: UIViewController, SkeletonViewsDelegate {
     @IBOutlet weak var userFollowingCount: UILabel!
     @IBOutlet weak var userFollowerCount: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var infoRepository: UILabel!
     
     private var userProfileUrl:URL?
     
@@ -41,18 +42,32 @@ class DetailViewController: UIViewController, SkeletonViewsDelegate {
             UIApplication.shared.open(url)
         }
     }
+    
     private func initView(){
         userInfoOne.text = ""
         userInfoTwo.text = ""
-        
+    
+        adjustAllSkletonabUIleLabelsSize()
         setAllViewsSkeletonable(true)
         
         userImageView.setupCircleImageView()
         getUserDetail()
     }
+    
+    private func adjustAllSkletonabUIleLabelsSize(){
+        allCandidateSkeletonViews.filter{view in
+            view != userImageView
+        }.forEach { view in
+            if let label = (view as? UILabel) {
+                label.font = label.font.withSize(
+                    infoRepository.font.pointSize
+                )
+            }
+        }
+    }
 
     
-    var allViews: [UIView]{
+    var allCandidateSkeletonViews: [UIView]{
         return [
             userBiography,
             userRepoCount,

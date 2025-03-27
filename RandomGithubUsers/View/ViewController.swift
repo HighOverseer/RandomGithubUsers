@@ -164,6 +164,7 @@ extension ViewController:UITableViewDelegate{
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: DetailViewController.segueIdentifier, sender: userPreviews[indexPath.row].username)
     }
+
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
