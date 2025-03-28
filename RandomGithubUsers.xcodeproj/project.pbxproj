@@ -54,16 +54,6 @@
 			path = RandomGithubUsers;
 			sourceTree = "<group>";
 		};
-		1FA8DC262D7D9642005427D2 /* RandomGithubUsersTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = RandomGithubUsersTests;
-			sourceTree = "<group>";
-		};
-		1FA8DC302D7D9642005427D2 /* RandomGithubUsersUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = RandomGithubUsersUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +87,6 @@
 			children = (
 				1F8C7BD52D7EC3DF001351E3 /* Environment.xcconfig */,
 				1FA8DC0F2D7D9641005427D2 /* RandomGithubUsers */,
-				1FA8DC262D7D9642005427D2 /* RandomGithubUsersTests */,
-				1FA8DC302D7D9642005427D2 /* RandomGithubUsersUITests */,
 				1FA8DC0E2D7D9641005427D2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -152,9 +140,6 @@
 			dependencies = (
 				1FA8DC252D7D9642005427D2 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				1FA8DC262D7D9642005427D2 /* RandomGithubUsersTests */,
-			);
 			name = RandomGithubUsersTests;
 			packageProductDependencies = (
 			);
@@ -174,9 +159,6 @@
 			);
 			dependencies = (
 				1FA8DC2F2D7D9642005427D2 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				1FA8DC302D7D9642005427D2 /* RandomGithubUsersUITests */,
 			);
 			name = RandomGithubUsersUITests;
 			packageProductDependencies = (

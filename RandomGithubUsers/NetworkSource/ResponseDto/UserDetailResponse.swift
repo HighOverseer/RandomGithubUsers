@@ -1,31 +1,20 @@
-//
-//  UserDetailResponse.swift
-//  RandomGithubUsers
-//
-//  Created by fajar on 09/03/25.
-//
+struct UserDetailResponse: Codable {
+    let username: String
+    let imageUrl: String
+    let name: String?
+    let repoCount: Int
+    let followersCount: Int
+    let followingCount: Int
+    let profileUrl: String
 
-import Foundation
+    let company: String?
+    let location: String?
+    let email: String?
+    let blog: String?
 
-struct UserDetailResponse: Codable{
-    let username:String
-    let imageUrl:String
-    let name:String?
-    let repoCount:Int
-    let followersCount:Int
-    let followingCount:Int
-    let profileUrl:String
-    
-    let company:String?
-    let location:String?
-    let email:String?
-    let blog:String?
-    
-    
-    let bio:String?
-    
+    let bio: String?
 
-    enum CodingKeys: String, CodingKey{
+    enum CodingKeys: String, CodingKey {
         case username = "login"
         case imageUrl = "avatar_url"
         case name
@@ -39,5 +28,4 @@ struct UserDetailResponse: Codable{
         case blog
         case profileUrl = "html_url"
     }
-    
 }

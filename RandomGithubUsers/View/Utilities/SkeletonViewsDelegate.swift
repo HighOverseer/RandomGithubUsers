@@ -1,43 +1,34 @@
-//
-//  SkeletonVisibilityDelegate.swift
-//  RandomGithubUsers
-//
-//  Created by fajar on 10/03/25.
-//
-
-import Foundation
 import UIKit
 
-protocol SkeletonViewsDelegate{
-    func setAllViewsSkeletonable(_ isSkeletonable:Bool)
-    
+protocol SkeletonViewsDelegate {
+    func setAllViewsSkeletonable(_ isSkeletonable: Bool)
+
     func showSkeletons()
-    
+
     func hideSkeletons()
-    
-    var allCandidateSkeletonViews:[UIView]{
+
+    var allSkeletonViewCandidates: [UIView] {
         get
     }
 }
 
-extension SkeletonViewsDelegate{
-    func setAllViewsSkeletonable(_ isSkeletonable:Bool){
-        allCandidateSkeletonViews.forEach{ view in
+extension SkeletonViewsDelegate {
+    func setAllViewsSkeletonable(_ isSkeletonable: Bool) {
+        for view in allSkeletonViewCandidates {
             view.isSkeletonable = isSkeletonable
         }
     }
-    
-    func showSkeletons(){
-        allCandidateSkeletonViews.forEach{ view in
+
+    func showSkeletons() {
+        for view in allSkeletonViewCandidates {
             view.showAnimatedGradientSkeleton()
         }
     }
-    
-    func hideSkeletons(){
-        allCandidateSkeletonViews.forEach{ view in
+
+    func hideSkeletons() {
+        for view in allSkeletonViewCandidates {
             view.hideSkeleton()
             view.stopSkeletonAnimation()
-            
         }
     }
 }

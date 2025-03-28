@@ -1,42 +1,24 @@
-//
-//  SkeletonTableViewCell.swift
-//  RandomGithubUsers
-//
-//  Created by fajar on 11/03/25.
-//
-
 import UIKit
 
-class SkeletonTableViewCell: UITableViewCell, SkeletonViewsDelegate{
+class SkeletonTableViewCell: UITableViewCell, SkeletonViewsDelegate {
+    @IBOutlet var skeletonGithubUrl: UILabel!
+    @IBOutlet var skeletonUsername: UILabel!
+    @IBOutlet var skeletonImageView: UIImageView!
 
-   
-    @IBOutlet weak var skeletonGithubUrl: UILabel!
-    @IBOutlet weak var skeletonUsername: UILabel!
-    @IBOutlet weak var skeletonImageView: UIImageView!
-    
     static let nibName = "SkeletonTableViewCell"
     static let identifier = "skeletonTableViewCell"
 
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         skeletonImageView.setupCircleImageView()
         setAllViewsSkeletonable(true)
     }
-    
-    var allCandidateSkeletonViews: [UIView]{
+
+    var allSkeletonViewCandidates: [UIView] {
         return [
             skeletonImageView,
             skeletonUsername,
-            skeletonGithubUrl
+            skeletonGithubUrl,
         ]
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }
